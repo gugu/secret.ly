@@ -1,0 +1,7 @@
+flask
+flask-cli
+click
+sqlalchemy
+flask-log
+flask-alembic
+flask-sqlalchemy
