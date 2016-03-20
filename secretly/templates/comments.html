@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>Record</h1>
+    <blockquote>
+      {{record.text}}
+    </blockquote>
+    <h1>Comments</h1>
+    <table class="table">
+    {% for comment in comments %}
+      <tr>
+        <td>
+          {{comment.text}}
+        </td>
+      </tr>
+      <tr>
+        <td>Likes: {{comment.like_count}} <a href="{{url_for('.comment_like', comment_id=comment.id)}}">like</a>, Author: <img width="24" src="{{comment.owner.avatar}}" /></td>
+      </tr>
+    {% endfor %}
+  </table>
+  <a class="btn btn-default" href="{{url_for('.new_comment', record_id=record.id)}}">New comment</a>
+{% endblock %}

@@ -5,3 +5,4 @@ sqlalchemy
 flask-log
 flask-alembic
 flask-sqlalchemy
+flask-wtf

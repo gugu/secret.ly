@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>Records</h1>
+    <table class="table">
+    {% for record in feed %}
+      <tr>
+        <td>
+          {{record.text}}
+        </td>
+      </tr>
+      <tr>
+        <td>Likes: {{record.like_count}} <a href="{{url_for('.like', record_id=record.id)}}">like</a>, <a href="{{url_for('.comments', record_id=record.id)}}">Comments: {{record.comment_count}}</a></td>
+      </tr>
+    {% endfor %}
+  </table>
+{% endblock %}
